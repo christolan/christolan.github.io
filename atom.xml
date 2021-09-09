@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>christolan.github.io</id>
+    <title>Jiwei's Blog</title>
+    <updated>2021-09-09T02:41:56.192Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="christolan.github.io"/>
+    <link rel="self" href="christolan.github.io/atom.xml"/>
+    <rights>All rights reserved 2021, Jiwei's Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hello, world!]]></title>
+        <id>https://christolan.github.io/hello-world</id>
+        <link href="https://christolan.github.io/hello-world"/>
+        <updated>2021-09-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[welcome to my blog
+欢迎来到我的博客
+]]></summary>
+        <content type="html"><![CDATA[<p>welcome to my blog<br>
+欢迎来到我的博客</p>
+]]></content>
+    </entry>
+</feed>
