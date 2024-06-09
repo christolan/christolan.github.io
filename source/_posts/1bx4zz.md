@@ -1,12 +1,15 @@
 ---
 title: Don't Starve Together Dedicated Server 使用问题记录
-date: '2024-05-12T15:30:00+00:00'
+date: "2024-05-12T15:30:00+00:00"
 published: false
-feature: ''
+feature: ""
 ---
+
 ## 说明
 
 本篇文章讨论的主体是通过 steam 平台安装的 Don't Starve Together Dedicated Server，而非运行于 Linux 服务器上的独立服务器。
+
+<!-- more -->
 
 ## 如何找到启动游戏的存档路径
 
@@ -64,14 +67,12 @@ Process Memory:
 
 首先打开 Don't Starve Together Dedicated Server 的安装目录。
 
-然后打开 mods/dedicated\_server\_mods\_setup.lua 文件。这个文件里面 -- 开头的行都是注释，这些注释解释了支持的两个函数的作用
+然后打开 mods/dedicated_server_mods_setup.lua 文件。这个文件里面 -- 开头的行都是注释，这些注释解释了支持的两个函数的作用
 
-*   ServerModSetup：启动时加载单个 mod
-    
-*   ServerModCollectionSetup：启动时加载 mod 合集
-    
+- ServerModSetup：启动时加载单个 mod
+- ServerModCollectionSetup：启动时加载 mod 合集
 
-如果不在这里添加调用，那么即便在存档里配置了 mod，在启动 dedicated server 时也不会下载和加载对应的 mod，也就自然没有作用。一个修改后的 dedicated\_server\_mods\_setup.lua 文件大致如下。
+如果不在这里添加调用，那么即便在存档里配置了 mod，在启动 dedicated server 时也不会下载和加载对应的 mod，也就自然没有作用。一个修改后的 dedicated_server_mods_setup.lua 文件大致如下。
 
 ```markup
 --There are two functions that will install mods, ServerModSetup and ServerModCollectionSetup. Put the calls to the functions in this file and they will be executed on boot.
@@ -100,22 +101,19 @@ ServerModSetup("378160973")
 
 但是如果因为某些原因配置管理员失败，那么就可以通过 steam 启动 Don't Starve Together Dedicated Server 时候弹出的那个 terminal 来输入指令，具体的指令和游戏内指令的写法一摸一样，例如我想手动存档的时候，输入 `c_save()` ，回车即可执行。一些常用的指令整理如下：
 
-*   存档
-    
+- 存档
 
 ```markup
 c_save()
 ```
 
-*   回滚（默认回滚到上一个存档点，可以传入一个 int 来指定回到第前 n 个存档点）
-    
+- 回滚（默认回滚到上一个存档点，可以传入一个 int 来指定回到第前 n 个存档点）
 
 ```markup
 c_rollback()
 ```
 
-*   关闭服务器（不传参数或者传 true 会在退出前存档，传 false 不会存档）
-    
+- 关闭服务器（不传参数或者传 true 会在退出前存档，传 false 不会存档）
 
 ```markup
 c_shutdown()

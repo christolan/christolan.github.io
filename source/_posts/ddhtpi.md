@@ -1,9 +1,10 @@
 ---
 title: 基于 docker-dst-server 的饥荒独立服务部署
-date: '2024-06-01T19:50:00+00:00'
+date: "2024-06-01T19:50:00+00:00"
 published: false
-feature: ''
+feature: ""
 ---
+
 # 概述
 
 > WARNING：教程不适合完全的新手，需要一定的 Linux 服务器运维和 docker 知识。
@@ -11,6 +12,8 @@ feature: ''
 部署饥荒独立服务器需要大量的命令行操作，为了简化部署过程，有人开源了 docker 部署的项目：[https://github.com/Jamesits/docker-dst-server](https://github.com/Jamesits/docker-dst-server) 。即便如此，依旧需要完成一些额外工作才能正常游戏，这个教程补充官方文档中缺失的一些细节。
 
 我喜欢循序渐进，先用最少的步骤跑通整体流程、再给出进阶的操作优化游戏体验。
+
+<!-- more -->
 
 # 基础部分
 
@@ -38,7 +41,7 @@ docker run -d -v /data/dst:/data --network host -it jamesits/dst-server:latest
 
 ```
 
-**第一次的启动必然是跑不起来的**，因为默认生成的存档缺少正确的 cluster\_token.txt 文件，这次启动主要是为了自动生成部分文件，成功以后在 `/data/dst` 目录中的内容如下：
+**第一次的启动必然是跑不起来的**，因为默认生成的存档缺少正确的 cluster_token.txt 文件，这次启动主要是为了自动生成部分文件，成功以后在 `/data/dst` 目录中的内容如下：
 
 ```markup
 /data/dst/
@@ -89,11 +92,11 @@ pds-g^KU_xxxxxxxx^+xxxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxx
 
 然后修改 `/data/dst/DoNotStarveTogether/Cluster_1/cluster_token.txt` 文件，把上面的一串 token 复制粘贴进去，保存退出即可。
 
-为了方便搜索到自己的服务器，推荐修改一下 `/data/dst/DoNotStarveTogether/Cluster_1/cluster.ini` 文件中的 cluster\_name
+为了方便搜索到自己的服务器，推荐修改一下 `/data/dst/DoNotStarveTogether/Cluster_1/cluster.ini` 文件中的 cluster_name
 
 ## 3\. 重启容器
 
-修改好 cluster\_token.txt 后重启 docker-dst-server 的 docker 容器，此时服务器就已经可用，可以在列表中通过前面修改好的 cluster\_name 搜索到了。
+修改好 cluster_token.txt 后重启 docker-dst-server 的 docker 容器，此时服务器就已经可用，可以在列表中通过前面修改好的 cluster_name 搜索到了。
 
 Enjoy your game~
 
@@ -103,15 +106,10 @@ Enjoy your game~
 
 基础部分创建出来的服务器使用的是 docker-dst-server 作者默认的配置，如果想要使用 klei 官方的默认配置，可以直接在 [https://accounts.klei.com/account/game/servers?game=DontStarveTogether](https://accounts.klei.com/account/game/servers?game=DontStarveTogether) 页面中点击“配置服务器”（修改好名称和简介方便搜索），再点击“下载配置”就会得到一个 MyDediServer.zip 文件。
 
-*   【本地】将下载的 MyDediServer.zip 解压出来，得到一个名为 MyDediServer 的文件夹
-    
-*   【本地】把 MyDediServer 文件夹重命名为 Cluster\_1
-    
-*   【服务器】删除原本的存档 `/data/dst/DoNotStarveTogether/Cluster_1` 目录
-    
-*   【本地】将这个新的 Cluster\_1 整体上传到服务器的 `/data/dst/DoNotStarveTogether` 目录下代替原来的存档
-    
-*   【服务器】重启 docker-dst-server 容器
-    
+- 【本地】将下载的 MyDediServer.zip 解压出来，得到一个名为 MyDediServer 的文件夹
+- 【本地】把 MyDediServer 文件夹重命名为 Cluster_1
+- 【服务器】删除原本的存档 `/data/dst/DoNotStarveTogether/Cluster_1` 目录
+- 【本地】将这个新的 Cluster_1 整体上传到服务器的 `/data/dst/DoNotStarveTogether` 目录下代替原来的存档
+- 【服务器】重启 docker-dst-server 容器
 
 这样就会得到一个基于官方默认配置的服务器。
