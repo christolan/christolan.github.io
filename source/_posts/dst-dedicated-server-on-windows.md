@@ -1,13 +1,11 @@
 ---
-title: Don't Starve Together Dedicated Server 使用问题记录
+title: Windows 平台 Don't Starve Together Dedicated Server 使用问题记录
 date: "2024-05-12T15:30:00+00:00"
-published: false
+published: true
 feature: ""
 ---
 
-## 说明
-
-本篇文章讨论的主体是通过 steam 平台安装的 Don't Starve Together Dedicated Server，而非运行于 Linux 服务器上的独立服务器。
+记录使用 Windows 平台 Don't Starve Together Dedicated Server 过程中的一些问题。
 
 <!-- more -->
 

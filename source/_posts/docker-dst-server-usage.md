@@ -1,17 +1,15 @@
 ---
-title: 基于 docker-dst-server 的饥荒独立服务部署
+title: 基于 docker-dst-server 的饥荒独立服务器部署
 date: "2024-06-01T19:50:00+00:00"
-published: false
+published: true
 feature: ""
 ---
 
-# 概述
-
-> WARNING：教程不适合完全的新手，需要一定的 Linux 服务器运维和 docker 知识。
-
-部署饥荒独立服务器需要大量的命令行操作，为了简化部署过程，有人开源了 docker 部署的项目：[https://github.com/Jamesits/docker-dst-server](https://github.com/Jamesits/docker-dst-server) 。即便如此，依旧需要完成一些额外工作才能正常游戏，这个教程补充官方文档中缺失的一些细节。
+部署饥荒独立服务器需要大量的命令行操作，为了简化部署过程，有人开源了 docker 部署的项目：[Jamesits/docker-dst-server](https://github.com/Jamesits/docker-dst-server) 。即便如此，依旧需要完成一些额外工作才能正常游戏，这个教程补充官方文档中缺失的一些细节。
 
 我喜欢循序渐进，先用最少的步骤跑通整体流程、再给出进阶的操作优化游戏体验。
+
+> WARNING：教程不适合完全的新手，需要一定的 Linux 服务器运维和 docker 知识。
 
 <!-- more -->
 
@@ -25,7 +23,6 @@ feature: ""
 
 ```markup
 docker run -v ${HOME}/.klei/DoNotStarveTogether:/data -p 10999-11000:10999-11000/udp -p 12346-12347:12346-12347/udp -it jamesits/dst-server:latest
-
 ```
 
 首先需要关注的部分是 `${HOME}/.klei/DoNotStarveTogether` ，这是主机上保存游戏存档数据的目录，可以根据需要调整。**为了方便描述，后面我假设这个目录为** `/data/dst` 。
@@ -38,7 +35,6 @@ docker run -v ${HOME}/.klei/DoNotStarveTogether:/data -p 10999-11000:10999-11000
 
 ```markup
 docker run -d -v /data/dst:/data --network host -it jamesits/dst-server:latest
-
 ```
 
 **第一次的启动必然是跑不起来的**，因为默认生成的存档缺少正确的 cluster_token.txt 文件，这次启动主要是为了自动生成部分文件，成功以后在 `/data/dst` 目录中的内容如下：
@@ -74,7 +70,6 @@ docker run -d -v /data/dst:/data --network host -it jamesits/dst-server:latest
         ├── cluster.ini
         ├── cluster_token.txt
         └── whitelist.txt
-
 ```
 
 这就说明容器启动后运行正常。
@@ -87,7 +82,6 @@ docker run -d -v /data/dst:/data --network host -it jamesits/dst-server:latest
 
 ```markup
 pds-g^KU_xxxxxxxx^+xxxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxx
-
 ```
 
 然后修改 `/data/dst/DoNotStarveTogether/Cluster_1/cluster_token.txt` 文件，把上面的一串 token 复制粘贴进去，保存退出即可。

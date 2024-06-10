@@ -5,11 +5,13 @@ published: true
 feature: ""
 ---
 
+总结我在试图从 iOS 切换到 Android 过程中的思考。
+
+<!-- more -->
+
 ## 引言
 
 作为一位 iOS 的老用户，同时也是一位 Android 的开发者，我一直在寻找一个从 iOS 切换到 Android 的契机。
-
-<!-- more -->
 
 我经常在 iOS 和 Android 之间切换，在相同的使用场景下，总是会不自觉地对比两个系统地差异，并且随手记录下来。
 

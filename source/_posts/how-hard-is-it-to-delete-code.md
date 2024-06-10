@@ -5,13 +5,15 @@ published: true
 feature: ""
 ---
 
+对垃圾代码难以清除的吐槽。
+
+<!-- more -->
+
 ## 引言
 
 阮老师最近一期的周刊中，聊到了技术债的问题
 
 [科技爱好者周刊（第 292 期）：所有代码都是技术债](https://www.ruanyifeng.com/blog/2024/03/weekly-issue-292.html)
-
-<!-- more -->
 
 下面是相关内容的节选：
 

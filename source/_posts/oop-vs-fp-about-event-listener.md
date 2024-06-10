@@ -5,9 +5,11 @@ published: true
 feature: ""
 ---
 
-在前端开发中，使用函数式的 JavaScript 语言，所以绝大部分的 API 设计中，都会把 event listener 设计成一个函数，在对应的时机直接调用这些函数。
+吐槽我们的 Android 项目中，我十分看不顺眼的添加监听写法。
 
 <!-- more -->
+
+在前端开发中，使用函数式的 JavaScript 语言，所以绝大部分的 API 设计中，都会把 event listener 设计成一个函数，在对应的时机直接调用这些函数。
 
 ```javascript
 const listener = (data) => {
@@ -27,7 +29,6 @@ var listener = object: Listener {
 }
 
 addEventListener(listener)
-
 ```
 
 两者之间其实并没有什么本质上的差异，无论是对象还是函数，其实都是一个引用而已，能够通过这个引用找到可以执行的回调函数就够了。
@@ -44,7 +45,6 @@ class Xxxx: Listener {
         Log.d("data", data)
     }
 }
-
 ```
 
 在当前的对象上实现 Listener 的接口，然后直接把 this 传进去。

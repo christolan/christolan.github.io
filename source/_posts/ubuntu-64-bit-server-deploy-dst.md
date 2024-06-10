@@ -5,6 +5,10 @@ published: true
 feature: ""
 ---
 
+记录在 64 位 ubuntu server 上手动部署饥荒独立服务器的流程。
+
+<!-- more -->
+
 ## 关键点
 
 - 安装 steamcmd
@@ -14,18 +18,15 @@ feature: ""
 - 添加服务器 mod 初始化命令
 - 饥荒独立服务器，启动！
 
-  <!-- more -->
-
 ## 【服务器】安装 steamcmd
 
-steam 有官方的文档，告诉你应该如何安装 steamcmd：[https://developer.valvesoftware.com/wiki/SteamCMD:zh-cn#Linux](https://developer.valvesoftware.com/wiki/SteamCMD:zh-cn#Linux) ，**官方强调了不要使用 root 用户来操作**，其中核心的部分如下：
+steam 有官方的文档，告诉你应该如何安装 steamcmd：[下载 SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD:zh-cn#Linux) ，**官方强调了不要使用 root 用户来操作**，其中核心的部分如下：
 
 ```shell
 sudo add-apt-repository multiverse
 sudo dpkg --add-architecture i386
 sudo apt update
 sudo apt install lib32gcc-s1 steamcmd
-
 ```
 
 安装成功的标志，是可以在任何目录下直接用 steamcmd 命令。很多教程会把这一步弄的十分麻烦，其实完全没有必要。
@@ -39,7 +40,6 @@ steamcmd
 Steam>force_install_dir /home/ubuntu/dst_server
 Steam>login anonymous
 Steam>app_update 343050 validate
-
 ```
 
 其中 `force_install_dir` 指定自定义的安装路径，/home/ubuntu/dst_server 是我使用的目录，可以按需修改。343050 是饥荒在 steam 上的 app id。
@@ -62,7 +62,6 @@ drwxrwxr-x  2 ubuntu ubuntu     4096 Jun  6 09:37 mods/
 drwxrwxr-x  4 ubuntu ubuntu     4096 Jun  6 09:37 steamapps/
 -rwxrwxr-x  1 ubuntu ubuntu 40226316 Jun  6 09:33 steamclient.so*
 -rwxrwxr-x  1 ubuntu ubuntu        7 Jun  6 09:35 version.txt*
-
 ```
 
 继续进入 bin64 目录，长这样：
@@ -78,7 +77,6 @@ drwxrwxr-x 8 ubuntu ubuntu    4096 Jun  6 09:37 ../
 drwxrwxr-x 2 ubuntu ubuntu    4096 Jun  6 09:37 lib64/
 drwxrwxr-x 2 ubuntu ubuntu    4096 Jun  6 09:37 scripts/
 -rwxrwxr-x 1 ubuntu ubuntu       6 Jun  6 09:33 steam_appid.txt*
-
 ```
 
 其中 dontstarve_dedicated_server_nullrenderer_x64 就是我们需要用到的可执行文件，直接调用就会启动一个饥荒独立服务器。
@@ -97,7 +95,7 @@ drwxrwxr-x 2 ubuntu ubuntu    4096 Jun  6 09:37 scripts/
 
 ## 【本地】给存档添加 cluster_token.txt
 
-进入 klei 的官网 [https://accounts.klei.com](https://accounts.klei.com) 使用 steam 账号登录，然后进入 [https://accounts.klei.com/account/game/servers?game=DontStarveTogether](https://accounts.klei.com/account/game/servers?game=DontStarveTogether) 页面，就可以创建服务器 token。一个合法的 token 是一串 pds- 开头的字符。
+进入 [klei 的官网](https://accounts.klei.com) 使用 steam 账号登录，然后进入 [饥荒服务器管理页面](https://accounts.klei.com/account/game/servers?game=DontStarveTogether)，就可以创建服务器 token。一个合法的 token 是一串 pds- 开头的字符。
 
 我们需要在前面创建好的 Cluster_x 目录下创建一个 cluster_token.txt 文件，然后将 pds- 开头的这一串字符复制粘贴进去。
 
@@ -125,7 +123,6 @@ drwxrwxr-x 2 ubuntu ubuntu    4096 Jun  6 09:37 scripts/
         --ServerModCollectionSetup("379114180")
 
 ServerModSetup("xxxxxxxx")
-
 ```
 
 ## 【服务器】饥荒独立服务器，启动！
@@ -135,7 +132,6 @@ ServerModSetup("xxxxxxxx")
 ```shell
 [00:00:00]: Token file not found: /home/ubuntu/.klei//DoNotStarveTogether/Cluster_1/cluster_token.txt, success: F, len: 0
 [00:00:00]: Token file not found: /home/ubuntu/.klei//DoNotStarveTogether/Cluster_1/cluster_token.txt, success: F, len: 0
-
 ```
 
 这里面包含了一些重要的信息： /home/ubuntu/.klei//DoNotStarveTogether/Cluster_1 就是默认用来启动独立服务器的存档路径。
@@ -149,7 +145,6 @@ ServerModSetup("xxxxxxxx")
 [00:00:03]: No auth token could be found.
 [00:00:03]: Please visit https://accounts.klei.com/account/game/servers?game=DontStarveTogether
 [00:00:03]: to generate server configuration files
-
 ```
 
 然后需要使用 sftp 工具连接到服务器，做两件事情：
