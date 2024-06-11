@@ -3,6 +3,7 @@ title: 64 位 Ubuntu 部署饥荒独立服务器
 date: "2024-06-05T17:42:00+00:00"
 published: true
 feature: ""
+permalink: /ubuntu-64-bit-server-deploy-dst/
 ---
 
 记录在 64 位 ubuntu server 上手动部署饥荒独立服务器的流程。
@@ -130,4 +131,4 @@ drwxrwxr-x 2 ubuntu ubuntu    4096 Jun  6 09:37 scripts/
 
 按照关键点一步步地来，理解了这个过程以后其实部署饥荒独立服务器非常简单。
 
-更多关于使用过程中的问题可以参考：[Don't Starve Together Dedicated Server 使用问题记录](/2024/05/12/dst-dedicated-server/)
+更多关于使用过程中的问题可以参考：[Don't Starve Together Dedicated Server 使用问题记录](/dst-dedicated-server/)

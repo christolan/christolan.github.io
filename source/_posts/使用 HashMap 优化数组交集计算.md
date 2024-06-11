@@ -3,6 +3,7 @@ title: 使用 HashMap 优化数组交集计算
 date: "2024-03-03T21:17:00+00:00"
 published: true
 feature: ""
+permalink: /hashmap-usage-array-intersection/
 ---
 
 在面试中，计算两个数组的交集是一个常见问题。初学者可能会想到使用两层 for 循环来解决：
