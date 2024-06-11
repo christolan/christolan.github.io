@@ -1,36 +1,28 @@
 ---
-title: HashMap 的使用：数组取交集
+title: 使用 HashMap 优化数组交集计算
 date: "2024-03-03T21:17:00+00:00"
 published: true
 feature: ""
 ---
 
-从简单的问题中感悟算法的美妙。
-
-<!-- more -->
-
-请问如何计算出两个数组的交集？
-
-这是我在面试中非常喜欢问的问题，这个问题几乎所有人都能给出自己的回答，因为最不济你也知道，两层 for 循环就可以：
+在面试中，计算两个数组的交集是一个常见问题。初学者可能会想到使用两层 for 循环来解决：
 
 ```javascript
 const intersection = (a, b) => {
   const res = new Set();
-
-  for (itemA of a) {
-    for (itemB of b) {
+  for (const itemA of a) {
+    for (const itemB of b) {
       if (itemA === itemB) {
         res.add(itemA);
         break;
       }
     }
   }
-
   return res;
 };
 ```
 
-但是两层 for 循环意味着复杂度为 n 方，这样的计算方式显然是效率极低的。如何将复杂度降低到 2n 呢？答案就是将其中的一个数组转成 Map：
+然而，这种方法的时间复杂度为 O(n²)，效率较低。为提升效率，我们可以利用 HashMap 将复杂度降低到 O(n)：
 
 ```javascript
 const intersection2 = (a, b) => {
@@ -40,15 +32,13 @@ const intersection2 = (a, b) => {
   }, {});
 
   const res = new Set();
-
-  for (item of b) {
+  for (const item of b) {
     if (mapOfA[item]) {
       res.add(item);
     }
   }
-
   return res;
 };
 ```
 
-这样就只需要两个数组各遍历一遍，就完成了取交集的功能。其中蕴含的，就是算法优化中的一个很基础的思想：空间换时间。
+通过将一个数组转换为 Map，我们只需遍历两个数组各一次，从而显著提升了计算效率。这种方法体现了算法优化中的“空间换时间”原则。

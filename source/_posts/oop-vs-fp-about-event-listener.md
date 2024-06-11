@@ -5,10 +5,6 @@ published: true
 feature: ""
 ---
 
-吐槽我们的 Android 项目中，我十分看不顺眼的添加监听写法。
-
-<!-- more -->
-
 在前端开发中，使用函数式的 JavaScript 语言，所以绝大部分的 API 设计中，都会把 event listener 设计成一个函数，在对应的时机直接调用这些函数。
 
 ```javascript

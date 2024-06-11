@@ -7,15 +7,12 @@ feature: ""
 
 记录在 64 位 ubuntu server 上手动部署饥荒独立服务器的流程。
 
-<!-- more -->
-
 ## 关键点
 
 - 安装 steamcmd
 - 安装 Don't Starve Together Dedicated Server
 - 准备一个存档
 - 给存档添加 cluster_token.txt
-- 添加服务器 mod 初始化命令
 - 饥荒独立服务器，启动！
 
 ## 【服务器】安装 steamcmd
@@ -87,7 +84,6 @@ drwxrwxr-x 2 ubuntu ubuntu    4096 Jun  6 09:37 scripts/
 
 - 使用一个好记的名字，方便从存档中找出对应的文件夹，也方便后续在游戏里找到自己的服务器；
 - 如果公网部署最好添加密码，内网部署可以随意；
-- 配置好服务器 mod，后续手动配置 mod 会很麻烦。
 
 配置好以后开始游戏，进入到选人的界面就可以退出了。创建好的存档通常会在 文档\\Klei\\DoNotStarveTogether 目录下面，一个存档就是一个形如 Cluster_x 的目录，其中 x 是一个递增的数字。
 
@@ -100,30 +96,6 @@ drwxrwxr-x 2 ubuntu ubuntu    4096 Jun  6 09:37 scripts/
 我们需要在前面创建好的 Cluster_x 目录下创建一个 cluster_token.txt 文件，然后将 pds- 开头的这一串字符复制粘贴进去。
 
 这样一个可用的存档就准备好了。
-
-## 【服务器】添加服务器 mod 初始化命令
-
-如果配置了服务器 mod，那么需要有一些操作来加载这些 mod，否则不会生效。
-
-首先确认用到 mod 的 id，然后编辑 /home/ubuntu/dst_server/mods 目录下的 dedicated_server_mods_setup.lua 文件。这个文件默认都是注释，解释了 `ServerModSetup` 和 `ServerModCollectionSetup` 两个方法的作用。
-
-在文件后面添加对 `ServerModSetup` 方法的调用，有几个 mod 就添加几个 ，就会在启动服务器的时候自动下载这些 mod：
-
-```markup
---There are two functions that will install mods, ServerModSetup and ServerModCollectionSetup. Put the calls to the functions in this file and they will be executed on boot.
-
---ServerModSetup takes a string of a specific mod's Workshop id. It will download and install the mod to your mod directory on boot.
-        --The Workshop id can be found at the end of the url to the mod's Workshop page.
-        --Example: http://steamcommunity.com/sharedfiles/filedetails/?id=350811795
-        --ServerModSetup("350811795")
-
---ServerModCollectionSetup takes a string of a specific mod's Workshop id. It will download all the mods in the collection and install them to the mod directory on boot.
-        --The Workshop id can be found at the end of the url to the collection's Workshop page.
-        --Example: http://steamcommunity.com/sharedfiles/filedetails/?id=379114180
-        --ServerModCollectionSetup("379114180")
-
-ServerModSetup("xxxxxxxx")
-```
 
 ## 【服务器】饥荒独立服务器，启动！
 
@@ -157,3 +129,5 @@ ServerModSetup("xxxxxxxx")
 ## 总结
 
 按照关键点一步步地来，理解了这个过程以后其实部署饥荒独立服务器非常简单。
+
+更多关于使用过程中的问题可以参考：[Don't Starve Together Dedicated Server 使用问题记录](/2024/05/12/dst-dedicated-server/)

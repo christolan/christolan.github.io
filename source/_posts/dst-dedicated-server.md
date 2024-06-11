@@ -1,17 +1,13 @@
 ---
-title: Windows 平台 Don't Starve Together Dedicated Server 使用问题记录
+title: Don't Starve Together Dedicated Server 使用问题记录
 date: "2024-05-12T15:30:00+00:00"
 published: true
 feature: ""
 ---
 
-记录使用 Windows 平台 Don't Starve Together Dedicated Server 过程中的一些问题。
-
-<!-- more -->
-
 ## 如何找到启动游戏的存档路径
 
-通过 stream 界面的“开始游戏”直接启动 Don't Starve Together Dedicated Server，会弹出一个 terminal，从 terminal 中最顶部打印出来的日志就可以找到游戏存档的路径：
+启动 Don't Starve Together Dedicated Server，会弹出一个 terminal，从 terminal 中最顶部打印出来的日志就可以找到游戏存档的路径：
 
 ```markup
 System Memory:
@@ -45,9 +41,7 @@ Process Memory:
 [00:00:00]: ....Done
 ```
 
-关键信息是 `PersistRootStorage is now APP:Klei//DoNotStarveTogether/Cluster_1/Master/`，其中 `APP:Klei` 通常就是系统的“文档”目录下的 Klei 文件夹。
-
-找到存档位置以后，就能自由编辑存档的内容了。理论上你是可以完全手动编辑存档内容的，但是操作难度稍微有些大，效率也不高，直接打开游戏创建一个世界，然后把对应的存档拷贝过来是最佳的实践。
+关键信息是 `PersistRootStorage is now APP:Klei//DoNotStarveTogether/Cluster_1/Master/`，其中 `APP:Klei` 通常就是 Windows 系统的“文档”目录下的 Klei 文件夹。而在 Linux 系统上，这个路径会更加清晰。找到存档位置以后，就能自由编辑存档的内容了。
 
 ## 如何找到 Klei ID
 
@@ -80,15 +74,14 @@ Process Memory:
 	--Example: http://steamcommunity.com/sharedfiles/filedetails/?id=350811795
 	--ServerModSetup("350811795")
 
-ServerModSetup("2287303119")
-ServerModSetup("362175979")
-ServerModSetup("378160973")
-
 --ServerModCollectionSetup takes a string of a specific mod's Workshop id. It will download all the mods in the collection and install them to the mod directory on boot.
 	--The Workshop id can be found at the end of the url to the collection's Workshop page.
 	--Example: http://steamcommunity.com/sharedfiles/filedetails/?id=379114180
 	--ServerModCollectionSetup("379114180")
 
+ServerModSetup("2287303119")
+ServerModSetup("362175979")
+ServerModSetup("378160973")
 ```
 
 我们只需要找到 mod 的 id，调用 ServerModSetup 函数即可。mod 的 id 即是创意工坊中浏览该 mod 时 url 中末尾的一串数字。

@@ -11,8 +11,6 @@ feature: ""
 
 > WARNING：教程不适合完全的新手，需要一定的 Linux 服务器运维和 docker 知识。
 
-<!-- more -->
-
 # 基础部分
 
 ## 1\. 启动 docker-dst-server
