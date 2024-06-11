@@ -40,11 +40,11 @@ social:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: /images/avatar.png
 
 # Avatar (頭像)
 avatar:
-  img: /images/avatar.jpg # https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
+  img: /images/avatar.png # https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
   effect: false
 
 # Disable all banner image
