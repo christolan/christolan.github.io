@@ -3,7 +3,7 @@ title: Don't Starve Together Dedicated Server 使用问题记录
 date: "2024-05-12T15:30:00+00:00"
 published: true
 feature: ""
-permalink: /dst-dedicated-server/
+permalink: /posts/dst-dedicated-server/
 ---
 
 ## 如何找到启动游戏的存档路径

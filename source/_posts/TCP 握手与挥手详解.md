@@ -4,7 +4,7 @@ date: "2024-03-07T08:45:00+00:00"
 published: true
 feature: ""
 tags: 计算机网络
-permalink: /tcp-handshake-and-handshake/
+permalink: /posts/tcp-handshake-and-handshake/
 ---
 
 在计算机网络中，TCP（传输控制协议）连接的建立和断开分别需要三次握手和四次挥手。下面我们详细说明这两个过程。

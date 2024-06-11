@@ -3,7 +3,7 @@ title: 基于 docker-dst-server 的饥荒独立服务器部署
 date: "2024-06-01T19:50:00+00:00"
 published: true
 feature: ""
-permalink: /docker-dst-server-usage/
+permalink: /posts/docker-dst-server-usage/
 ---
 
 部署饥荒独立服务器需要大量的命令行操作，为了简化部署过程，有人开源了 docker 部署的项目：[Jamesits/docker-dst-server](https://github.com/Jamesits/docker-dst-server) 。即便如此，依旧需要完成一些额外工作才能正常游戏，这个教程补充官方文档中缺失的一些细节。
