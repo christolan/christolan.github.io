@@ -3,6 +3,9 @@ title: Don't Starve Together Dedicated Server 使用问题记录
 date: "2024-05-12T15:30:00+00:00"
 published: true
 feature: ""
+categories: 游戏
+tags:
+  - 饥荒
 permalink: /posts/dst-dedicated-server/
 ---
 

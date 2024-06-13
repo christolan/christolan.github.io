@@ -3,6 +3,9 @@ title: 使用 HashMap 优化数组交集计算
 date: "2024-03-03T21:17:00+00:00"
 published: true
 feature: ""
+categories: 技术
+tags:
+  - 算法
 permalink: /posts/hashmap-usage-array-intersection/
 ---
 

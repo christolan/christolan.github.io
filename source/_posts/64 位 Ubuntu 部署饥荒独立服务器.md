@@ -3,6 +3,9 @@ title: 64 位 Ubuntu 部署饥荒独立服务器
 date: "2024-06-05T17:42:00+00:00"
 published: true
 feature: ""
+categories: 游戏
+tags:
+  - 饥荒
 permalink: /posts/ubuntu-64-bit-server-deploy-dst/
 ---
 

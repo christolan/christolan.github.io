@@ -3,6 +3,8 @@ title: 相伴三年，我对 AB 实验的一些感悟
 date: "2024-05-20T23:03:00+00:00"
 published: true
 feature: ""
+categories: 工作
+tags:
 permalink: /posts/my-reflections-on-ab-experiments/
 ---
 

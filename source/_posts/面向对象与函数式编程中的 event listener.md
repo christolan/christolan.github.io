@@ -3,6 +3,8 @@ title: 面向对象与函数式编程中的 event listener
 date: "2024-03-08T22:24:00+00:00"
 published: true
 feature: ""
+categories: 技术
+tags:
 permalink: /posts/oop-vs-fp-about-event-listener/
 ---
 

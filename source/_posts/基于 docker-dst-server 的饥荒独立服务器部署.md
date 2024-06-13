@@ -3,6 +3,9 @@ title: 基于 docker-dst-server 的饥荒独立服务器部署
 date: "2024-06-01T19:50:00+00:00"
 published: true
 feature: ""
+categories: 游戏
+tags:
+  - 饥荒
 permalink: /posts/docker-dst-server-usage/
 ---
 

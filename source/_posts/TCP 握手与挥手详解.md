@@ -3,7 +3,9 @@ title: TCP 握手与挥手详解
 date: "2024-03-07T08:45:00+00:00"
 published: true
 feature: ""
-tags: 计算机网络
+categories: 技术
+tags:
+  - 计算机网络
 permalink: /posts/tcp-handshake-and-handshake/
 ---
 
