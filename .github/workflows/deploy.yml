@@ -20,15 +20,26 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm i -g yarn
-      - run: yarn
-      - run: yarn clean
-      - run: yarn build
-      - run: git config --global user.email "xiaojiwei.javen@gmail.com"
-      - run: git config --global user.name "Jiwei Xiao"
-      - run: yarn deploy
+
+      - name: Install yarn
+        run: npm i -g yarn
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Generate static files
+        run: yarn build
+
+      - name: Git Config
+        run: git config --global user.email "xiaojiwei.javen@gmail.com" && git config --global user.name "Jiwei Xiao"
+
+      - name: Deploy to GitHub Pages
+        run: yarn deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
