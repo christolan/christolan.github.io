@@ -131,4 +131,6 @@ drwxrwxr-x 2 ubuntu ubuntu    4096 Jun  6 09:37 scripts/
 
 按照关键点一步步地来，理解了这个过程以后其实部署饥荒独立服务器非常简单。
 
+但是目前为止，还是存在一些缺陷，比如服务器只有地面，没有洞穴，这是因为使用 dontstarve_dedicated_server_nullrenderer_x64 时没有带任何参数。如果想要进阶的配置，那么只需要进一步了解 dontstarve_dedicated_server_nullrenderer_x64 的 api，并且按照文档操作即可。
+
 更多关于使用过程中的问题可以参考：[Don't Starve Together Dedicated Server 使用问题记录](/posts/dst-dedicated-server/)
