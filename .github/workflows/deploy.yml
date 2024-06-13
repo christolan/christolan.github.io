@@ -29,4 +29,6 @@ jobs:
       - run: yarn
       - run: yarn clean
       - run: yarn build
+      - run: git config --global user.email "xiaojiwei.javen@gmail.com"
+      - run: git config --global user.name "Jiwei Xiao"
       - run: yarn deploy
