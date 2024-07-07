@@ -1,12 +1,12 @@
 ---
 title: Don't Starve Together Dedicated Server 使用问题记录
-date: "2024-05-12T15:30:00+00:00"
 published: true
-feature: ""
+feature: ''
 categories: 游戏
 tags:
   - 饥荒
-permalink: /posts/dst-dedicated-server/
+abbrlink: 3666381028
+date: 2024-05-12 15:30:00
 ---
 
 ## 如何找到启动游戏的存档路径

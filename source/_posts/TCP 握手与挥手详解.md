@@ -1,12 +1,12 @@
 ---
 title: TCP 握手与挥手详解
-date: "2024-03-07T08:45:00+00:00"
 published: true
-feature: ""
+feature: ''
 categories: 技术
 tags:
   - 计算机网络
-permalink: /posts/tcp-handshake-and-handshake/
+abbrlink: 4127557888
+date: 2024-03-07 08:45:00
 ---
 
 在计算机网络中，TCP（传输控制协议）连接的建立和断开分别需要三次握手和四次挥手。下面我们详细说明这两个过程。

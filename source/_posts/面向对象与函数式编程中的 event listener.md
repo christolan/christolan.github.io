@@ -1,11 +1,11 @@
 ---
 title: 面向对象与函数式编程中的 event listener
-date: "2024-03-08T22:24:00+00:00"
 published: true
-feature: ""
+feature: ''
 categories: 技术
+abbrlink: 185627741
+date: 2024-03-08 22:24:00
 tags:
-permalink: /posts/oop-vs-fp-about-event-listener/
 ---
 
 在前端开发中，使用函数式的 JavaScript 语言，所以绝大部分的 API 设计中，都会把 event listener 设计成一个函数，在对应的时机直接调用这些函数。

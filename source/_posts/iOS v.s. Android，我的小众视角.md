@@ -1,12 +1,12 @@
 ---
 title: iOS v.s. Android，我的小众视角
-date: "2024-05-25T15:18:00+00:00"
 published: true
-feature: ""
+feature: ''
 categories: 兴趣
 tags:
   - 手机
-permalink: /posts/ios-vs-android-my-minority-perspective/
+abbrlink: 2945007796
+date: 2024-05-25 15:18:00
 ---
 
 ## 引言

@@ -1,12 +1,12 @@
 ---
 title: 64 位 Ubuntu 部署饥荒独立服务器
-date: "2024-06-05T17:42:00+00:00"
 published: true
-feature: ""
+feature: ''
 categories: 游戏
 tags:
   - 饥荒
-permalink: /posts/ubuntu-64-bit-server-deploy-dst/
+abbrlink: 1462264791
+date: 2024-06-05 17:42:00
 ---
 
 记录在 64 位 ubuntu server 上手动部署饥荒独立服务器的流程。

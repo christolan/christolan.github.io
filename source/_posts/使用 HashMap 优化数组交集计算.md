@@ -1,12 +1,12 @@
 ---
 title: 使用 HashMap 优化数组交集计算
-date: "2024-03-03T21:17:00+00:00"
 published: true
-feature: ""
+feature: ''
 categories: 技术
 tags:
   - 算法
-permalink: /posts/hashmap-usage-array-intersection/
+abbrlink: 3337290680
+date: 2024-03-03 21:17:00
 ---
 
 在面试中，计算两个数组的交集是一个常见问题。初学者可能会想到使用两层 for 循环来解决：

@@ -1,11 +1,11 @@
 ---
 title: 我心目中合格的 NAS
 published: true
-permalink: /posts/my-idea-of-a-qualified-nas/
-date: 2024-06-13 21:43:37
 categories: 兴趣
 tags:
   - NAS
+abbrlink: 2934277461
+date: 2024-06-13 21:43:37
 ---
 
 ## 引言
