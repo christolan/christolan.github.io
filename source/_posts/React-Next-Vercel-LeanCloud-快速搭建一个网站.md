@@ -34,15 +34,15 @@ date: 2024-07-07 21:09:48
 
 可以通过具体的 JavaScript 代码，让开发者们感受一下它有多方便：
 
-```shell
-# SDK 安装
+SDK 安装
 
+```shell
 npm install leancloud-storage --save
 ```
 
-```javascript
-// 初始化 SDK
+初始化 SDK
 
+```javascript
 const AV = require('leancloud-storage');
 
 // 下面的信息在 LeanCloud 控制台中找到
@@ -53,9 +53,9 @@ AV.init({
 });
 ```
 
-```javascript
-// 数据操作
+数据操作
 
+```javascript
 // 声明 class
 const Todo = AV.Object.extend('Todo');
 
@@ -105,6 +105,6 @@ Next 项目部署使用 Vercel，因为 Next 本身就是 Vercel 公司的产品
 
 下面是整套方案的简单架构图：
 
-![基本架构](/images/arch.png)
+{% image /images/arch.png 基本架构 bg:'#ffffff' %}
 
 我希望这篇文章能够帮你快速出发，让你的想法迅速进入迭代流程，然后打磨出你自己心爱的产品。
