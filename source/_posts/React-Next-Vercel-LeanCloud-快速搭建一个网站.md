@@ -94,7 +94,7 @@ todo.save().then(
 - 方便根据自己的需求，对数据库操作进行适当地封装，将一些耗时计算放到服务端来做
 - 在后端使用 LeanCloud 的 SDK 进行数据操作，然后提供接口供前端调用，这样更加安全
 
-Next 项目部署使用 Vercel，因为 Next 本身就是 Vercel 公司的产品，所以 Vercel 部署 Next 项目极其简单。基于我个人的使用感受，对 Vercel 的印象大概如下：
+Next 项目部署使用 [Vercel](https://vercel.com/)，因为 Next 本身就是 Vercel 公司的产品，所以 Vercel 部署 Next 项目极其简单。基于我个人的使用感受，对 Vercel 的印象大概如下：
 
 - 将 Next 项目推到 GitHub 上，然后在 Vercel 上导入，就可以实现自动部署
 - 免费的托管
