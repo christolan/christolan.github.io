@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Christolan
-subtitle: '帽子的博客'
-description: '新生代农民工的所思所想'
+title: '帽子的博客'
+subtitle: '新生代农民工的所思所想'
+description: ''
 keywords:
 author: 帽子
 language: zh-CN
