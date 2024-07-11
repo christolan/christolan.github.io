@@ -1,0 +1,23 @@
+toc:
+  layout: toc
+  list_number: false # 是否显示序号
+  min_depth: 2 # 建议不要低于 2 即从 H2 标签开始解析（H1标签用于文章大标题）
+  max_depth: 5 # 5 代表最多解析到 H5 标签
+  fallback: recent # Use a backup widget when toc does not exist.
+  collapse: false # true / false / auto (始终折叠/不折叠/自动折叠)
+
+welcome:
+  layout: markdown
+  content: |
+    🖥️ **#前端开发者**
+
+    🤖 **#安卓开发者**
+
+    👷‍♂️ **#新生代农民工**
+
+    👏 欢迎图图 👏
+
+recent:
+#  layout: recent
+#  rss: # /atom.xml # npm i hexo-generator-feed
+#  limit: 5 # Count of posts

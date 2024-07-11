@@ -37,3 +37,44 @@ style:
     body: 'system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif'
     code: 'Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif'
     codeblock: 'Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif'
+
+# 站点主结构树
+site_tree:
+  # -- 列表类页面 -- #
+  # 主页配置
+  home:
+    leftbar: welcome
+    rightbar:
+  post:
+    menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
+    leftbar: welcome # for pages using 'layout:post'
+    rightbar: toc
+
+# 侧边栏主功能导航菜单
+menubar:
+  columns: 4 # 一行多少个
+  items: # 可按照自己需求增加，符合以下格式即可
+    - id: home # 页面中高亮的 menu_id
+      # theme: '#1BCDFC' # 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
+      # icon: solar:documents-bold-duotone # 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
+      title: 首页 # 标题
+      url: / # 跳转链接，支持相对路径和绝对路径
+    - id: archives
+      # theme: '#3DC550'
+      # icon: solar:notebook-bookmark-bold-duotone
+      title: 归档
+      url: /archives/
+    - id: tags
+      # theme: '#FA6400'
+      # icon: solar:planet-bold-duotone
+      title: 标签
+      url: /tags/
+    - id: categories
+      # theme: '#F44336'
+      # icon: solar:chat-square-like-bold-duotone
+      title: 分类
+      url: /categories/
+
+logo:
+  avatar: '[{config.avatar}](/)' # you can set avatar link in _config.yml or '[https://xxx.png](/about/)'
+  title: '[{config.title}](/)' # you can set html tag like: '[<img no-lazy height="32px" src="xxx"/>](/)'
