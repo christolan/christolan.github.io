@@ -105,6 +105,6 @@ Next 项目部署使用 [Vercel](https://vercel.com/)，因为 Next 本身就是
 
 下面是整套方案的简单架构图：
 
-{% image /images/arch.png 基本架构 bg:'#ffffff' %}
+![基本架构](/images/arch.png)
 
 我希望这篇文章能够帮你快速出发，让你的想法迅速进入迭代流程，然后打磨出你自己心爱的产品。
