@@ -3,7 +3,6 @@ title: 面向对象与函数式编程中的 event listener
 published: true
 feature: ''
 categories: 技术
-abbrlink: 185627741
 date: 2024-03-08 22:24:00
 tags:
 ---

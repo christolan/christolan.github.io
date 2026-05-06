@@ -3,7 +3,6 @@ title: 完美的代码无法拯救你的公司
 published: true
 categories: 翻译
 tags:
-abbrlink: 3527714181
 date: 2024-06-16 11:51:10
 ---
 
