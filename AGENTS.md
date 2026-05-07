@@ -25,27 +25,31 @@ git push origin main
 
 ## 写一篇新文章
 
-### 1. 创建文件
+### 1. 使用 Hexo 创建文章
 
 ```bash
-touch ~/christolan.github.io/source/_posts/<slug>.md
+cd ~/christolan.github.io
+npx hexo new post "<english-kebab-case-slug>"
 ```
+
+命令里的标题用英文 kebab-case slug（如 `how-transformer-inference-works`），用于生成文件名和 permalink；中文展示标题写在 front matter 的 `title` 中。
 
 ### 2. 填写 Hexo front matter
 
 ```yaml
 ---
 title: <文章标题>
+date: YYYY-MM-DD HH:MM:SS
 published: true
-categories: AI          # 或 游戏 / 兴趣 / 技术
+categories:
+  - AI          # 或 游戏 / 兴趣 / 技术
 tags:
   - AI
   - <话题>
-date: YYYY-MM-DD HH:MM:SS
 ---
 ```
 
-permalink 使用 Hexo 默认格式 `:year/:month/:day/:title/`，`:title` 取文件名（去掉 `.md` 后缀）。**文件名必须为英文 kebab-case**，根据文章内容取合适的英文 slug（如 `how-transformer-inference-works.md`）。
+permalink 使用 Hexo 默认格式 `:year/:month/:day/:title/`，`:title` 取文件名（去掉 `.md` 后缀）。**文件名必须为英文 kebab-case**。`date` 作为正式发布时间，会影响首页、归档和 RSS 的排序。
 
 ### 3. 撰写正文
 
@@ -78,50 +82,19 @@ git push origin main
 
 按需新增标签。分类：`AI` / `游戏` / `技术` / `兴趣`。
 
-## 主题切换流程
+## 主题配置
 
-博客使用双主题（Butterfly + Stellar），通过 `_config.yml` 的 `theme:` 行切换。
-
-### ⚠️ 强制步骤：先构建验证，再推送
-
-主题切换后**必须**本地构建验证通过才能 push。绝不能改完配置直接推远端让 CI 去试——构建失败会导致线上站点挂掉。
-
-```bash
-cd ~/christolan.github.io
-npm install                        # 装依赖（不要 rm -rf node_modules，直接装即可）
-npx hexo clean && npx hexo generate  # 构建验证
-npx hexo server                    # 启动 dev server → curl http://localhost:4000 确认 200
-# 确认无误后再 git add + commit + push
-```
+博客当前使用 Butterfly 主题。
 
 ### ⚠️ Pitfall：主题源码在 node_modules 里，不是 themes/ 目录
 
-Butterfly 和 Stellar 都通过 npm 安装，源码位于 `node_modules/hexo-theme-butterfly/`。`themes/` 目录下只有 `.gitkeep`，是空的。需要查看模板或样式时，去 `node_modules/` 下找：
+Butterfly 通过 npm 安装，源码位于 `node_modules/hexo-theme-butterfly/`。`themes/` 目录下只有 `.gitkeep`，是空的。需要查看模板或样式时，去 `node_modules/` 下找：
 
 - 模板：`node_modules/hexo-theme-butterfly/layout/`（.pug 文件）
 - 样式：`node_modules/hexo-theme-butterfly/source/css/`（.styl 文件）
 - 主题默认配置：`node_modules/hexo-theme-butterfly/_config.yml`
 
 用户可覆盖的配置写在项目根目录的 `_config.butterfly.yml`，不要直接改 `node_modules/` 下的文件。
-
-### Pitfall：Stellar 专属标签不兼容其他主题
-
-St的主题有专属 Nunjucks tag，切到 Butterfly 会构建报错 `unknown block tag`。已知的冲突标签及转换方案见 `references/stellar-tag-migration.md`。
-
-切换主题前应先扫描文章中的主题专属标签：
-```bash
-grep -rn '{%' ~/christolan.github.io/source/_posts/ | grep -v 'frontmatter'
-```
-
-### 主题切换完整流程
-
-1. 修改 `_config.yml` 的 `theme:` 行
-2. 扫描文章中的旧主题专属标签
-3. 将不兼容的标签转为通用写法（见 references）
-4. `npm install`（直接装，不删 node_modules）
-5. `hexo clean && hexo generate` 构建验证
-6. `hexo server` + curl 确认页面正常
-7. 停掉 server，git commit + push
 
 ## 分页配置
 

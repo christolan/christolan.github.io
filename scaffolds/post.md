@@ -1,7 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
-published: false
+published: true
 categories:
 tags:
 ---
