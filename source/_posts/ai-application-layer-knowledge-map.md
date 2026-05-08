@@ -2,6 +2,8 @@
 title: 基于大模型 API 构建上层应用的知识地图
 date: 2026-05-07 13:29:49
 published: true
+cover: /images/ai-application-layer-knowledge-map.png
+top_img: /images/ai-application-layer-knowledge-map.png
 categories:
   - AI
 tags:
