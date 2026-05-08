@@ -6,8 +6,8 @@ tags:
   - AI
   - 面试
 date: 2026-05-05 12:00:00
-cover: /images/why-you-cant-infinitely-append-full-chat-history-to-an-llm.svg
-top_img: /images/why-you-cant-infinitely-append-full-chat-history-to-an-llm.svg
+cover: /images/why-you-cant-infinitely-append-full-chat-history-to-an-llm.png
+top_img: /images/why-you-cant-infinitely-append-full-chat-history-to-an-llm.png
 ---
 
 # 为什么"把聊天记录全塞进去"是 LLM 产品最常见的自杀行为
