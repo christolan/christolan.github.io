@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">npm global is not a system package manager</title>
+  <desc id="desc">A dark technical illustration showing isolated Node.js runtime islands, a fragile npm global hub, and AI CLI tools connected by unstable paths.</desc>
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#193b5a" stop-opacity="0.9"/>
+      <stop offset="45%" stop-color="#0c1728" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#05070d" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="npmRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5a67"/>
+      <stop offset="100%" stop-color="#cb3837"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8df7ff"/>
+      <stop offset="100%" stop-color="#2aa7ff"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b2a44" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#0d1322" stop-opacity="0.96"/>
+    </linearGradient>
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000" flood-opacity="0.38"/>
+    </filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#94dfff" stroke-width="1" stroke-opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bgGlow)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <path d="M0 690 C270 610 406 738 658 656 C898 578 1014 444 1270 520 C1436 569 1532 542 1600 502 L1600 900 L0 900 Z" fill="#06111f" opacity="0.72"/>
+
+  <!-- Dependency paths -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+    <path d="M808 437 C660 338 536 319 398 368" stroke="#50e6ff" stroke-width="5" stroke-dasharray="12 18" filter="url(#glow)"/>
+    <path d="M805 456 C650 496 548 572 426 648" stroke="#50e6ff" stroke-width="5" stroke-dasharray="12 18" filter="url(#glow)"/>
+    <path d="M854 432 C1003 326 1138 310 1253 374" stroke="#50e6ff" stroke-width="5" stroke-dasharray="12 18" filter="url(#glow)"/>
+    <path d="M864 463 C1044 498 1148 579 1260 664" stroke="#50e6ff" stroke-width="5" stroke-dasharray="12 18" filter="url(#glow)"/>
+  </g>
+
+  <!-- Central npm-like fragile hub -->
+  <g filter="url(#softShadow)">
+    <rect x="610" y="298" width="380" height="220" rx="34" fill="url(#panel)" stroke="#78efff" stroke-opacity="0.22"/>
+    <rect x="652" y="348" width="296" height="112" rx="18" fill="url(#npmRed)"/>
+    <rect x="693" y="385" width="46" height="42" rx="6" fill="#fff" opacity="0.96"/>
+    <rect x="767" y="385" width="46" height="42" rx="6" fill="#fff" opacity="0.96"/>
+    <rect x="841" y="385" width="46" height="42" rx="6" fill="#fff" opacity="0.96"/>
+    <path d="M701 423 L718 390 L735 423" fill="none" stroke="#cb3837" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M775 423 L775 392 L807 423 L807 392" fill="none" stroke="#cb3837" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M849 423 L849 392 L866 407 L883 392 L883 423" fill="none" stroke="#cb3837" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M628 303 L972 512" stroke="#ff8791" stroke-width="2" stroke-opacity="0.45"/>
+  </g>
+
+  <!-- Runtime islands -->
+  <g filter="url(#softShadow)">
+    <g transform="translate(250 300)">
+      <ellipse cx="118" cy="95" rx="145" ry="72" fill="#111d31" stroke="#3edbff" stroke-opacity="0.36"/>
+      <circle cx="88" cy="78" r="42" fill="url(#cyan)" opacity="0.95"/>
+      <path d="M72 76 L87 91 L109 61" fill="none" stroke="#04101d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+      <rect x="128" y="54" width="74" height="48" rx="12" fill="#223553" stroke="#6df2ff" stroke-opacity="0.25"/>
+      <circle cx="146" cy="78" r="5" fill="#8df7ff"/><circle cx="165" cy="78" r="5" fill="#8df7ff"/><circle cx="184" cy="78" r="5" fill="#8df7ff"/>
+    </g>
+    <g transform="translate(225 570)">
+      <ellipse cx="160" cy="92" rx="158" ry="76" fill="#111d31" stroke="#3edbff" stroke-opacity="0.32"/>
+      <rect x="72" y="48" width="176" height="91" rx="18" fill="#121a2b" stroke="#6df2ff" stroke-opacity="0.32"/>
+      <path d="M101 80 L122 96 L101 112" fill="none" stroke="#8df7ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M142 116 L203 116" stroke="#ff6875" stroke-width="7" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1100 306)">
+      <ellipse cx="135" cy="95" rx="150" ry="73" fill="#111d31" stroke="#3edbff" stroke-opacity="0.34"/>
+      <path d="M86 67 H192 V124 H86 Z" fill="#121a2b" stroke="#6df2ff" stroke-opacity="0.35"/>
+      <path d="M101 82 H177 M101 97 H157 M101 112 H187" stroke="#8df7ff" stroke-width="7" stroke-linecap="round" opacity="0.88"/>
+      <circle cx="214" cy="68" r="22" fill="#ff5a67" opacity="0.9"/>
+    </g>
+    <g transform="translate(1090 598)">
+      <ellipse cx="160" cy="92" rx="158" ry="75" fill="#111d31" stroke="#3edbff" stroke-opacity="0.32"/>
+      <g transform="translate(96 33)">
+        <circle cx="34" cy="56" r="31" fill="url(#cyan)" opacity="0.95"/>
+        <circle cx="94" cy="56" r="31" fill="#ff5a67" opacity="0.95"/>
+        <path d="M58 56 H70" stroke="#f6fbff" stroke-width="7" stroke-linecap="round" opacity="0.95"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Floating CLI cards -->
+  <g filter="url(#softShadow)" opacity="0.96">
+    <rect x="520" y="610" width="170" height="86" rx="18" fill="#0e1728" stroke="#72f4ff" stroke-opacity="0.25"/>
+    <path d="M553 644 L570 657 L553 670" fill="none" stroke="#8df7ff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M588 671 H648" stroke="#ff6672" stroke-width="7" stroke-linecap="round"/>
+
+    <rect x="896" y="614" width="184" height="88" rx="18" fill="#0e1728" stroke="#72f4ff" stroke-opacity="0.25"/>
+    <circle cx="936" cy="658" r="24" fill="#8df7ff" opacity="0.95"/>
+    <path d="M981 643 H1040 M981 663 H1020" stroke="#ff6672" stroke-width="7" stroke-linecap="round"/>
+
+    <rect x="704" y="160" width="192" height="84" rx="18" fill="#0e1728" stroke="#72f4ff" stroke-opacity="0.25"/>
+    <path d="M742 202 C771 170 829 170 858 202 C830 233 771 233 742 202Z" fill="none" stroke="#8df7ff" stroke-width="7"/>
+    <circle cx="800" cy="202" r="11" fill="#ff6672"/>
+  </g>
+
+  <!-- Broken system boundary -->
+  <g opacity="0.5">
+    <circle cx="800" cy="450" r="330" fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="24 26"/>
+    <path d="M1040 225 L1074 190 M1070 226 L1035 191" stroke="#ff6672" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+    <path d="M548 692 L582 657 M578 693 L543 658" stroke="#ff6672" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+  </g>
+</svg>
