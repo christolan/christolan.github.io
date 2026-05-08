@@ -7,6 +7,8 @@ tags:
   - 面试
   - 解码策略
 date: 2026-05-01 12:00:00
+cover: /images/llm-decoding-strategies.svg
+top_img: /images/llm-decoding-strategies.svg
 ---
 
 # LLM 解码策略：temperature、采样与 beam search，到底在选什么

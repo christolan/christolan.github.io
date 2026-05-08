@@ -7,6 +7,8 @@ tags:
   - 面试
   - Agent
 date: 2026-05-05 12:00:00
+cover: /images/react-cot-and-tool-use.svg
+top_img: /images/react-cot-and-tool-use.svg
 ---
 
 # ReAct、CoT 与 Tool-Use：从想清楚到做清楚

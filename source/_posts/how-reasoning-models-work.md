@@ -7,6 +7,8 @@ tags:
   - 面试
   - 推理模型
 date: 2026-05-04 14:00:00
+cover: /images/how-reasoning-models-work.svg
+top_img: /images/how-reasoning-models-work.svg
 ---
 
 # 推理模型如何"思考"：一切都只是 Token

@@ -7,6 +7,8 @@ tags:
   - 面试
   - Agent
 date: 2026-05-04 12:00:00
+cover: /images/understanding-llm-function-calling-mechanism.svg
+top_img: /images/understanding-llm-function-calling-mechanism.svg
 ---
 
 # 深入理解 LLM 函数调用：模型不会"决定"用工具
