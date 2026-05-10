@@ -7,6 +7,8 @@ tags:
   - 面试
   - 多模态
 date: 2026-04-29 14:00:00
+cover: /images/how-to-implement-multimodal-image-upload-in-ai-chat.png
+top_img: /images/how-to-implement-multimodal-image-upload-in-ai-chat.png
 ---
 
 # 多模态 AI 聊天的图像上传：从字节流到用户体验

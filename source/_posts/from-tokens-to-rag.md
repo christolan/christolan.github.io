@@ -7,6 +7,8 @@ tags:
   - 面试
   - RAG
 date: 2026-04-28 12:00:00
+cover: /images/from-tokens-to-rag.png
+top_img: /images/from-tokens-to-rag.png
 ---
 
 # 从 Token 到 RAG：理解 AI Native 数据管道

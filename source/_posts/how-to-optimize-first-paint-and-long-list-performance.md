@@ -7,6 +7,8 @@ tags:
   - 面试
   - 性能优化
 date: 2026-04-25 12:00:00
+cover: /images/how-to-optimize-first-paint-and-long-list-performance.png
+top_img: /images/how-to-optimize-first-paint-and-long-list-performance.png
 ---
 
 # 低端设备上让 AI 原生应用"感觉快"的实战指南

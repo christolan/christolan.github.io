@@ -7,6 +7,8 @@ tags:
   - 面试
   - 流式
 date: 2026-04-22 12:00:00
+cover: /images/streaming-in-ai-native-apps.png
+top_img: /images/streaming-in-ai-native-apps.png
 ---
 
 # 流式输出：AI 原生应用的默认交互范式

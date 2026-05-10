@@ -7,6 +7,8 @@ tags:
   - 面试
   - Transformer
 date: 2026-04-29 12:00:00
+cover: /images/how-transformer-inference-works-attention-ffn-kvcache-sampling.png
+top_img: /images/how-transformer-inference-works-attention-ffn-kvcache-sampling.png
 ---
 
 # Transformer 到底怎么生成文本：逐层拆解

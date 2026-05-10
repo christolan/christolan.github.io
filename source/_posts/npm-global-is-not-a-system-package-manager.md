@@ -2,8 +2,8 @@
 title: npm global 不应该被当成系统级包管理器
 published: true
 date: 2026-05-08 19:30:01
-cover: /images/npm-global-is-not-system-package-manager.svg
-top_img: /images/npm-global-is-not-system-package-manager.svg
+cover: /images/npm-global-is-not-a-system-package-manager.png
+top_img: /images/npm-global-is-not-a-system-package-manager.png
 categories:
   - 技术
 tags:
