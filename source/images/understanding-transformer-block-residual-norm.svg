@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 1180" role="img" aria-label="Transformer block diagrams">
+  <style><![CDATA[
+  body { margin:0; background:#020617; color:#e2e8f0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 28px; }
+  .title { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+  .dot { width:12px; height:12px; background:#22d3ee; border-radius:50%; box-shadow:0 0 18px #22d3ee; }
+  h1 { font-size:28px; margin:0; }
+  .subtitle { color:#94a3b8; margin:0 0 22px 24px; font-size:14px; }
+  .card { border:1px solid #1e293b; border-radius:16px; background:rgba(15,23,42,.78); padding:16px; box-shadow:0 24px 80px rgba(0,0,0,.35); }
+  .notes { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px; }
+  .note { border:1px solid #334155; border-radius:12px; padding:14px; background:rgba(15,23,42,.6); }
+  .note h3 { margin:0 0 8px; font-size:15px; color:#f8fafc; }
+  .note p { margin:0; color:#cbd5e1; line-height:1.65; font-size:13px; }
+  svg { width:100%; height:auto; display:block; background:#020617; border-radius:12px; }
+  .label { fill:#e2e8f0; font-size:15px; font-weight:700; }
+  .small { fill:#cbd5e1; font-size:11px; }
+  .tiny { fill:#94a3b8; font-size:10px; }
+  .section { fill:#f8fafc; font-size:18px; font-weight:800; }
+  .box-bg { fill:#0f172a; }
+  .attn { fill:rgba(8,51,68,.45); stroke:#22d3ee; stroke-width:2; }
+  .mlp { fill:rgba(6,78,59,.45); stroke:#34d399; stroke-width:2; }
+  .norm { fill:rgba(76,29,149,.45); stroke:#a78bfa; stroke-width:2; }
+  .res { fill:rgba(120,53,15,.35); stroke:#fbbf24; stroke-width:2; }
+  .io { fill:rgba(30,41,59,.65); stroke:#94a3b8; stroke-width:2; }
+  .warn { fill:rgba(136,19,55,.45); stroke:#fb7185; stroke-width:2; }
+  .arrow { stroke:#64748b; stroke-width:2; fill:none; marker-end:url(#arrow); }
+  .arrow-cyan { stroke:#22d3ee; stroke-width:2; fill:none; marker-end:url(#arrowCyan); }
+  .arrow-green { stroke:#34d399; stroke-width:2; fill:none; marker-end:url(#arrowGreen); }
+  .arrow-amber { stroke:#fbbf24; stroke-width:2; fill:none; marker-end:url(#arrowAmber); }
+  .dash { stroke-dasharray:6 5; }
+]]></style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <marker id="arrowCyan" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#22d3ee"/></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#34d399"/></marker>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#fbbf24"/></marker>
+  </defs>
+  <rect width="1320" height="1180" fill="url(#grid)"/>
+
+  <!-- Diagram 1 -->
+  <text x="40" y="48" class="section">图 1：一层 Transformer block 做什么</text>
+  <text x="40" y="72" class="small">核心：先看上下文，再自己加工；中间用 residual 保留原信息，用 norm 稳定数值。</text>
+
+  <path d="M180 145 L180 205" class="arrow"/>
+  <path d="M180 265 L180 325" class="arrow-cyan"/>
+  <path d="M180 385 L180 445" class="arrow-amber"/>
+  <path d="M180 505 L180 565" class="arrow"/>
+  <path d="M180 625 L180 685" class="arrow-green"/>
+  <path d="M180 745 L180 805" class="arrow-amber"/>
+
+  <rect x="80" y="95" width="200" height="50" rx="8" class="box-bg"/><rect x="80" y="95" width="200" height="50" rx="8" class="io"/>
+  <text x="180" y="126" text-anchor="middle" class="label">输入 token 表示 x</text>
+
+  <rect x="80" y="205" width="200" height="60" rx="8" class="box-bg"/><rect x="80" y="205" width="200" height="60" rx="8" class="norm"/>
+  <text x="180" y="230" text-anchor="middle" class="label">Norm</text><text x="180" y="249" text-anchor="middle" class="small">先整理尺度</text>
+
+  <rect x="80" y="325" width="200" height="60" rx="8" class="box-bg"/><rect x="80" y="325" width="200" height="60" rx="8" class="attn"/>
+  <text x="180" y="350" text-anchor="middle" class="label">Self-Attention</text><text x="180" y="369" text-anchor="middle" class="small">看上下文</text>
+
+  <rect x="80" y="445" width="200" height="60" rx="8" class="box-bg"/><rect x="80" y="445" width="200" height="60" rx="8" class="res"/>
+  <text x="180" y="470" text-anchor="middle" class="label">Residual Add</text><text x="180" y="489" text-anchor="middle" class="small">x + 新信息</text>
+
+  <rect x="80" y="565" width="200" height="60" rx="8" class="box-bg"/><rect x="80" y="565" width="200" height="60" rx="8" class="norm"/>
+  <text x="180" y="590" text-anchor="middle" class="label">Norm</text><text x="180" y="609" text-anchor="middle" class="small">再次整理尺度</text>
+
+  <rect x="80" y="685" width="200" height="60" rx="8" class="box-bg"/><rect x="80" y="685" width="200" height="60" rx="8" class="mlp"/>
+  <text x="180" y="710" text-anchor="middle" class="label">MLP / FFN</text><text x="180" y="729" text-anchor="middle" class="small">自己加工</text>
+
+  <rect x="80" y="805" width="200" height="60" rx="8" class="box-bg"/><rect x="80" y="805" width="200" height="60" rx="8" class="res"/>
+  <text x="180" y="830" text-anchor="middle" class="label">Residual Add</text><text x="180" y="849" text-anchor="middle" class="small">继续保留原信息</text>
+
+  <rect x="80" y="925" width="200" height="50" rx="8" class="box-bg"/><rect x="80" y="925" width="200" height="50" rx="8" class="io"/>
+  <text x="180" y="956" text-anchor="middle" class="label">输出到下一层</text>
+  <path d="M180 865 L180 925" class="arrow"/>
+
+  <path d="M285 120 C405 120 405 475 285 475" class="arrow-amber dash"/>
+  <text x="415" y="285" class="small" fill="#fbbf24">第一条 residual path</text>
+  <path d="M285 475 C430 475 430 835 285 835" class="arrow-amber dash"/>
+  <text x="445" y="660" class="small" fill="#fbbf24">第二条 residual path</text>
+
+  <!-- Diagram 2 -->
+  <text x="570" y="48" class="section">图 2：Self-Attention vs MLP</text>
+  <text x="570" y="72" class="small">两个子模块分工不同：attention 负责“信息交流”，MLP 负责“语义加工”。</text>
+
+  <rect x="560" y="105" width="310" height="250" rx="14" class="box-bg"/><rect x="560" y="105" width="310" height="250" rx="14" class="attn"/>
+  <text x="715" y="135" text-anchor="middle" class="label">Self-Attention：看上下文</text>
+  <circle cx="625" cy="210" r="30" fill="rgba(8,51,68,.75)" stroke="#22d3ee" stroke-width="2"/><text x="625" y="216" text-anchor="middle" class="small">它</text>
+  <circle cx="715" cy="175" r="30" fill="rgba(8,51,68,.75)" stroke="#22d3ee" stroke-width="2"/><text x="715" y="181" text-anchor="middle" class="small">苹果</text>
+  <circle cx="790" cy="250" r="34" fill="rgba(8,51,68,.75)" stroke="#22d3ee" stroke-width="2"/><text x="790" y="256" text-anchor="middle" class="small">新手机</text>
+  <path d="M645 205 L685 185" class="arrow-cyan"/><path d="M650 222 L755 245" class="arrow-cyan"/>
+  <text x="715" y="318" text-anchor="middle" class="small">每个 token 根据相关性，从其他 token 拿信息</text>
+
+  <path d="M875 230 L955 230" class="arrow"/>
+
+  <rect x="960" y="105" width="310" height="250" rx="14" class="box-bg"/><rect x="960" y="105" width="310" height="250" rx="14" class="mlp"/>
+  <text x="1115" y="135" text-anchor="middle" class="label">MLP / FFN：自己加工</text>
+  <rect x="1035" y="175" width="160" height="50" rx="8" class="box-bg"/><rect x="1035" y="175" width="160" height="50" rx="8" class="io"/>
+  <text x="1115" y="205" text-anchor="middle" class="small">上下文化表示</text>
+  <path d="M1115 225 L1115 265" class="arrow-green"/>
+  <rect x="1035" y="265" width="160" height="50" rx="8" class="box-bg"/><rect x="1035" y="265" width="160" height="50" rx="8" class="mlp"/>
+  <text x="1115" y="295" text-anchor="middle" class="small">抽象 / 组合 / 变换</text>
+  <text x="1115" y="330" text-anchor="middle" class="small">不再看别的 token，而是处理自己的向量</text>
+
+  <!-- Diagram 3 -->
+  <text x="570" y="425" class="section">图 3：为什么 residual + norm 让深层网络稳定</text>
+  <text x="570" y="449" class="small">residual 给信息和梯度开高速路；norm 防止每层相加后数值尺度失控。</text>
+
+  <rect x="560" y="490" width="310" height="260" rx="14" class="box-bg"/><rect x="560" y="490" width="310" height="260" rx="14" class="warn"/>
+  <text x="715" y="520" text-anchor="middle" class="label">没有 residual / norm</text>
+  <text x="585" y="565" class="small">Layer 1：彻底变换</text>
+  <text x="585" y="600" class="small">Layer 20：信息逐渐漂移</text>
+  <text x="585" y="635" class="small">Layer 80：早期信息难保留</text>
+  <text x="585" y="670" class="small">训练：梯度传播困难</text>
+  <text x="585" y="705" class="small">数值：尺度可能放大 / 混乱</text>
+
+  <rect x="960" y="490" width="310" height="260" rx="14" class="box-bg"/><rect x="960" y="490" width="310" height="260" rx="14" class="res"/>
+  <text x="1115" y="520" text-anchor="middle" class="label">有 residual + norm</text>
+  <text x="985" y="565" class="small">Residual：原信息可以直达后层</text>
+  <text x="985" y="600" class="small">每层只学“增量修改”</text>
+  <text x="985" y="635" class="small">Norm：处理前稳定数值尺度</text>
+  <text x="985" y="670" class="small">训练：深层网络更容易收敛</text>
+  <text x="985" y="705" class="small">工程：更适合大模型堆深层</text>
+
+  <path d="M870 620 L955 620" class="arrow-amber"/>
+  <text x="913" y="600" text-anchor="middle" class="tiny">稳定化</text>
+
+  <!-- Formula / summary -->
+  <rect x="560" y="815" width="710" height="145" rx="14" class="box-bg"/><rect x="560" y="815" width="710" height="145" rx="14" fill="rgba(30,41,59,.55)" stroke="#94a3b8" stroke-width="2"/>
+  <text x="585" y="850" class="label">现代 Pre-Norm Transformer block 的简化公式</text>
+  <text x="585" y="895" class="section" fill="#f8fafc">x = x + SelfAttention(Norm(x))</text>
+  <text x="585" y="935" class="section" fill="#f8fafc">x = x + MLP(Norm(x))</text>
+  <text x="925" y="895" class="small">先 Norm，再计算，再 Residual Add</text>
+  <text x="925" y="935" class="small">核心思想：稳定输入 + 保留原信息 + 增量加工</text>
+
+  <rect x="40" y="1035" width="1230" height="90" rx="14" class="box-bg"/><rect x="40" y="1035" width="1230" height="90" rx="14" fill="rgba(15,23,42,.72)" stroke="#334155" stroke-width="2"/>
+  <text x="65" y="1070" class="label">一句话记忆</text>
+  <text x="65" y="1102" class="small">Transformer 每一层：attention 负责“看上下文”，MLP 负责“自己加工”，residual 负责“不丢原信息”，norm 负责“不让数值失控”。</text>
+</svg>
